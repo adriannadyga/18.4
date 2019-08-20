@@ -69,7 +69,7 @@ var MovieDesc = React.createClass({
 
 var MoviePoster = React.createClass({
   propTypes: {
-    poster: React.PropTypes.string.isRequired,
+    src: React.PropTypes.string.isRequired,
   },
 
   render: function() {
@@ -80,8 +80,8 @@ var MoviePoster = React.createClass({
 });
 
 var MoviesList = movies.map(function(movie) {
-  return React.createElement(Movie, {key:movie.id, title:movie.title, desc:movie.desc, poster:movie.poster});
+  return React.createElement(Movie, {key:movie.id, movie: movie});
 });
 
-var element = React.createElement(MoviesList, {movies: movies});
+var element = React.createElement(MoviesList);
 ReactDOM.render(element, document.getElementById('app'));
